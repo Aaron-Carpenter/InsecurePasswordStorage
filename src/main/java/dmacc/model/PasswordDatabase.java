@@ -4,6 +4,7 @@
  * CIS175 - Fall 2023
  * Oct 30, 2023
  */
+
 package dmacc.model;
 
 import org.springframework.boot.SpringApplication;

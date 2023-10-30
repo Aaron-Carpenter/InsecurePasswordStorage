@@ -4,6 +4,7 @@
  * CIS175 - Fall 2023
  * Oct 30, 2023
  */
+
 package dmacc.controller;
 
 import dmacc.model.PasswordEntry;
