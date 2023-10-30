@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View All Passwords</title>
+</head>
+<body>
+    <h2>All Passwords</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+        </tr>
+        <tr th:each="passwordEntry : ${passwordList}">
+            <td th:text="${passwordEntry.id}"></td>
+            <td th:text="${passwordEntry.name}"></td>
+            <td th:text="${passwordEntry.password}"></td>
+        </tr>
+    </table>
+</body>
+</html>
