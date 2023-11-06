@@ -2,12 +2,23 @@
 <html>
 <head>
     <title>Delete Password Page</title>
+    <script>
+        function validateInput() {
+            var input = document.getElementById('id').value;
+            var isNum = /^\d+$/.test(input);
+            if (!isNum) {
+                alert('Please enter a valid numerical value.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <h2>Delete Password</h2>
-    <form action="#" th:action="@{/delete}" method="post">
+    <form action="#" th:action="@{/delete}" method="post" onsubmit="return validateInput()">
         <label for="id">Enter ID to delete:</label><br>
-        <input type="text" id="id" name="id"><br><br>
+        <input type="text" id="id" name="id" required><br><br>
         <input type="submit" value="Delete">
     </form>
 </body>

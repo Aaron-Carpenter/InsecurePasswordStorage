@@ -2,14 +2,28 @@
 <html>
 <head>
     <title>Input Page</title>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            var hasSpecialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password);
+            var hasTwoNumbers = (password.match(/\d/g) || []).length >= 2;
+            var hasNoSpace = !/\s/.test(password);
+
+            if (!hasSpecialChar || !hasTwoNumbers || !hasNoSpace) {
+                alert('Password must contain at least 2 numbers, 1 special character, and no spaces.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 	<body>
 	<h2>Add New Password</h2>
-		<form action="/add" method="post">
+		<form action="/add" method="post" onsubmit="return validatePassword()">
 		    <label for="name">Name:</label><br>
-		    <input type="text" id="name" name="name"><br>
+		    <input type="text" id="name" name="name" required><br>
 		    <label for="password">Password:</label><br>
-		    <input type="text" id="password" name="password"><br><br>
+		    <input type="password" id="password" name="password" required><br><br>
 		    <input type="submit" value="Submit">
 		</form>
 	</body>
